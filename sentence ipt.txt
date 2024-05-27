@@ -1,0 +1,53 @@
+Input Format
+
+First, take a character,  as input.
+Then take the string,  as input.
+Lastly, take the sentence  as input.
+
+Constraints
+
+Strings for  and  will have fewer than 100 characters, including the newline.
+
+Output Format
+
+Print three lines of output. The first line prints the character, .
+The second line prints the string, .
+The third line prints the sentence, .
+
+Sample Input 0
+
+C
+Language
+Welcome To C!!
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+int main() 
+{
+    char ch;
+    char str[100];
+    char s2[100];
+
+    // Reading a single character
+    scanf("%c", &ch);
+    
+    // Reading a string
+    scanf("%s", str);
+    
+    // Consuming the newline character left in the buffer by the previous scanf
+    getchar();
+    
+    // Reading a line (sentence)
+    scanf("%[^\n]%*c", s2);
+
+    // Printing the outputs
+    printf("%c\n", ch);
+    printf("%s\n", str);
+    printf("%s\n", s2);
+
+    return 0;
+}
