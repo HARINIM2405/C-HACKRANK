@@ -1,0 +1,60 @@
+rotating a matrix in clock wise:
+
+#include <stdio.h>
+int main() {
+    int n = 3, i, j, t;
+    int a[n][n];
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+//transposing matrix
+    for (i = 0; i < n; i++) {
+        for (j = i + 1; j < n; j++) { 
+            a[i][j] = a[j][i];
+            a[j][i] = t;
+        }
+    }
+    printf("\nTransposed Matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+//reversing a matrix
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n / 2; j++) { 
+            t = a[i][j];
+            a[i][j] = a[i][n - j - 1];
+            a[i][n - j - 1] = t;
+        }
+    }
+    printf("\nMatrix after Reversing Rows:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+output :
+
+1 2 3
+4 5 6 
+7 8 9
+
+Transposed Matrix:
+1 4 7 
+2 5 8 
+3 6 9 
+
+Matrix after Reversing Rows:
+7 4 1 
+8 5 2 
+9 6 3 
