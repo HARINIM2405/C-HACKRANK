@@ -1,0 +1,56 @@
+INspace arry rotation
+
+#include <stdio.h>
+
+int main() {
+    int n,i,j,temp;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("reverse: ");
+    for (i = 0; i < n / 2; i++) {  
+        temp = a[i];
+        a[i] = a[n - i - 1];
+        a[n - i - 1] = temp;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    int r;
+    scanf("%d",&r);
+    printf("second  rotation: ");
+    for(i=0;i<r/2;i++)
+    {
+        temp = a[i];
+        a[i] = a[r - i - 1];
+        a[r - i - 1] = temp;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    printf("\n");
+    for (i = r; i < (r + n) / 2; i++) {
+        temp = a[i];
+        a[i] = a[(r+n) - i - 1]; 
+        a[(r+n) - i - 1] = temp;
+    }
+    printf("third rotation: ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    
+}
+
+------------------------------
+5
+1 2 3 4 5
+reverse: 5 4 3 2 1 
+2
+second  rotation: 4 5 3 2 1 
+third rotation: 4 5 1 2 3 
